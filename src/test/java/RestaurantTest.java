@@ -42,6 +42,20 @@ class RestaurantTest {
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
+    public void calculate_total_cost_of_order_should_return_total_cost_of_order(){
+        List<Item> order = new ArrayList<Item>();
+
+        Item r1 =new Item("Sweet corn soup",119);
+        order.add(r1);
+        Item r2 = new Item("Vegetable lasagne", 269);
+        order.add(r2);
+        int AtualTotalCost =restaurant.calculateTotalCostOfOrder(order);
+
+        assertEquals( 388,AtualTotalCost);
+
+    }
+    
+    @Test
     public void adding_item_to_menu_should_increase_menu_size_by_1(){
 
         int initialMenuSize = restaurant.getMenu().size();

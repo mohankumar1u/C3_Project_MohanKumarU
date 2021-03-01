@@ -35,6 +35,14 @@ public class Restaurant {
         return menu;
     }
 
+    public int calculateTotalCostOfOrder(List<Item> order){
+        int totalCost =0;
+        for(Item item: order) {
+
+               totalCost =totalCost + item.getPrice();
+        }
+        return totalCost;
+    }
 
     private Item findItemByName(String itemName){
         for(Item item: menu) {
